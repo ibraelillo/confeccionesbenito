@@ -9,7 +9,8 @@
         "symfony/symfony": "2.1.*",
         "doctrine/orm": ">=2.2.3,<2.4-dev",
         "doctrine/doctrine-bundle": "1.0.*",
-        "twig/extensions": "1.0.*@dev",
+        "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "twig/extensions": "1.0.*",
         "symfony/assetic-bundle": "2.1.*",
         "symfony/swiftmailer-bundle": "2.1.*",
         "symfony/monolog-bundle": "2.1.*",
@@ -18,7 +19,15 @@
         "sensio/generator-bundle": "2.1.*",
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
-        "kriswallsmith/assetic": "1.1.*@dev"
+        "sonata-project/admin-bundle": "dev-master",
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
+        "sonata-project/media-bundle": "dev-master",
+        "sonata-project/cache-bundle": "dev-master",
+        "sonata-project/user-bundle": "dev-master",
+        "sonata-project/intl-bundle": "dev-master",
+        "friendsofsymfony/user-bundle": "*",
+        "stof/doctrine-extensions-bundle": "dev-master",
+        "ideup/simple-paginator-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
@@ -34,6 +43,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ]
     },
+    "minimum-stability": "dev",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web"

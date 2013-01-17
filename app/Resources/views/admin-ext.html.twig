@@ -1,0 +1,49 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Gestion y Administracion | {{ enterprise|title|default("") }}{% endblock %}
+
+{% block stylesheets %}
+
+
+{% endblock %}
+
+{% block body %}
+    <div class="page-header">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul id="main-nav" class="nav">
+                    <li><a href="{{ path('desktop') }}"><i class="icon-home"></i> Inicio</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">Art&iacute;culos <span class="badge badge-info">5000</span></a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="{{ path('proveedor') }}">Proveedores <span class="badge badge-info">47</span> </a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">Familias <span class="badge badge-info">23</span> </a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">Ventas <span class="badge badge-info">23</span> </a></li>
+                    <li><a href="#">Pedidos <span class="badge badge-info">23</span> </a></li>
+                    <li class="divider-vertical"></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Temporadas <b class="caret"></b></a>
+                        <ul id="temporadas" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                            {% render "ProductoBundle:Default:temporadas" %}
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">Clientes <span class="badge badge-info">23</span> </a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="content">
+        {% block content %}{% endblock %}
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+
+{% endblock %}

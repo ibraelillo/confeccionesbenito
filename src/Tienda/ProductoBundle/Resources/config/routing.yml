@@ -1,0 +1,3 @@
+ProductoBundle_proveedor:
+    resource: "@ProductoBundle/Resources/config/routing/proveedor.yml"
+    prefix: /proveedores

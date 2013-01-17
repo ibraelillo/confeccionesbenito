@@ -1,0 +1,12 @@
+{% for anno, temps in temporadas %}
+<li class="dropdown-submenu">
+    <a tabindex="-{{ loop.index }}" href="#">{{ anno }}</a>
+    <ul class="dropdown-menu">
+        {% for t in temps %}
+        <li>
+            <a href="#">{{ t.etapa }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</li>
+{% endfor %}

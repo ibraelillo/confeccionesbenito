@@ -19,6 +19,32 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new Tienda\ProductoBundle\ProductoBundle(),
+
+            new FOS\UserBundle\FOSUserBundle(),
+
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\CacheBundle\SonataCacheBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new \Sonata\MediaBundle\SonataMediaBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Sonata\IntlBundle\SonataIntlBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Ideup\SimplePaginatorBundle\IdeupSimplePaginatorBundle(),
+
+
+
+
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+
+            //new FOS\UserBundle\FOSUserBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,110 @@
+{% extends admin %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/fuelux.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fuelux-responsive.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <table id="grid" class="table table-bordered datagrid datagrid-stretch-header">
+        <thead>
+        <tr>
+            <th>
+                <div class="pull-right datagrid-header-right">
+                    <div class="input-append search">
+                        <input type="text" class="input-medium" placeholder="Search">
+                        <button class="btn"><i class="icon-search"></i></button>
+                    </div>
+                </div>
+                <div class="datagrid-header-left">
+                    <span class="datagrid-header-title">Temporadas</span>
+                </div>
+
+            </th>
+        </tr>
+        </thead>
+
+        <tfoot class="datagrid datagrid-stretch-footer">
+        <tr>
+            <th>
+                <div class="datagrid-footer-left container-fluid" style="display:none;">
+                    <div class="grid-controls grid-pager row-fluid">
+						<div class="span4 input-prepend input-append pull-left">
+                            <span class="pull-left add-on"><span class="grid-start"></span> - <span class="grid-end"></span> de <span
+                                    class="grid-count"></span>. Mostrar  </span>
+                            <select class="grid-pagesize span3 combobox">
+                                <option>5</option>
+                                <option>10</option>
+                                <option>20</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                            <span class="add-on">por p&aacute;gina</span>
+                        </div>
+                        <div class="span4 pagination-centered">
+                            <ul class="pager">
+                                <li><a class="grid-prevpage"><i class="icon-chevron-left"></i></a></li>
+                                <li><a class="grid-nextpage"><i class="icon-chevron-right"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="span4">
+                            <div class="input-append input-prepend dropdown pagination-right">
+                                <span class="add-on">Mostrando </span>
+                                <input class="span1" type="text">
+                                <span class="add-on">de <span class="grid-pages"></span> p&aacute;ginas</span>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </th>
+        </tr>
+        </tfoot>
+
+    </table>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="{{ asset('js/datasource.js') }}"></script>
+    <script src="{{ asset('js/datagrid.js') }}"></script>
+    <script type="text/javascript">
+        $(function(){
+
+
+            $('#grid').datagrid({
+                dataSource: new RemoteDataSource({
+                    url: '{{ path('proveedor') }}',
+                    columns:  [
+                        {
+                            property: 'etapa',
+                            label: 'Etapa',
+                            sortable: true
+                        },
+                        {
+                            property: 'id',
+                            label: 'ID',
+                            sortable: true
+                        },
+                        {
+                            property: 'anno',
+                            label: 'Anno',
+                            sortable: true
+                        }
+                    ],
+                    delay: 250
+                }),
+                itemsText: "resultados"
+            });
+        });
+
+
+    </script>
+
+
+{% endblock %}

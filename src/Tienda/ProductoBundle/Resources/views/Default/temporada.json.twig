@@ -1,0 +1,4 @@
+{
+    "rows":[{% for t in temporadas %}{"id": "{{ t.id }}", "etapa": "{{ t.etapa }}", "anno": {{ t.anno }} }{% if not loop.last %},{% endif %}{% endfor %}],
+    "total":"{{ temporadas|length }}",  "page":"1","perpage":"{{ temporadas|length }}","pages":"1"
+}
